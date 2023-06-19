@@ -2,13 +2,14 @@ import React from 'react'
 import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
 import { useFrame } from '@react-three/fiber';
+import { shirt_baked } from '../assets'
 import { Decal, useGLTF, useTexture } from '@react-three/drei';
 
 import state from '../store';
 
 const Shirt = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF('../../public/desktop_pc/shirt_baked.glb');
+  const { nodes, materials } = useGLTF(shirt_baked);
 
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
